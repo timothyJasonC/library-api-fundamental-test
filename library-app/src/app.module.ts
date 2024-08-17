@@ -11,7 +11,6 @@ import { Book, BookSchema } from './book/books.schema';
 import { BorrowedBook, BorrowedBookSchema } from './book/borrowedBook.schema';
 import { SeederService } from './seeder/seeder.service';
 import { Member, MemberSchema } from './member/member.schema';
-//test
 
 @Module({
   imports: [
