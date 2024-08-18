@@ -11,6 +11,7 @@ import { Book, BookSchema } from './book/books.schema';
 import { BorrowedBook, BorrowedBookSchema } from './book/borrowedBook.schema';
 import { SeederService } from './seeder/seeder.service';
 import { Member, MemberSchema } from './member/member.schema';
+import { NamaResourceModule } from './nama-resource/nama-resource.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { Member, MemberSchema } from './member/member.schema';
       { name: BorrowedBook.name, schema: BorrowedBookSchema },
       { name: Member.name, schema: MemberSchema },
     ]),
+    NamaResourceModule,
   ],
   controllers: [AppController, MembersController, BooksController],
   providers: [AppService, MembersService, BooksService, SeederService],

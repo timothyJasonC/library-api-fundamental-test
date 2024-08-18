@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Book, BookDocument } from 'src/book/books.schema';
-import { Member, MemberDocument } from 'src/member/member.schema';
+import { Book, BookDocument } from '../book/books.schema';
+import { Member, MemberDocument } from '../member/member.schema';
 
 @Injectable()
 export class SeederService {
   constructor(
-    @InjectModel(Book.name) private bookModel: Model<BookDocument>,
     @InjectModel(Member.name) private memberModel: Model<MemberDocument>,
+    @InjectModel(Book.name) private bookModel: Model<BookDocument>,
   ) {}
 
   async seed() {
