@@ -53,7 +53,7 @@ export class BooksService {
     // Proses peminjaman buku
     await this.borrowedBookModel.create({ memberCode, bookCode, borrowedAt: new Date() })
     await this.bookModel.updateOne({ code: bookCode }, { $inc: { stock: -1 } })
-    return {message: 'Borrow success'}
+    return {message: 'Book borrowed successfully'}
   }
   
   async returnBook(memberCode: string, bookCode: string) {
@@ -77,6 +77,6 @@ export class BooksService {
   
       throw new BadRequestException(`Late return. You are penalized for 3 days until ${penalizedUntil}`)
     }
-    return {message: 'return success'}
+    return {message: 'Book returned successfully'}
   }
 }
